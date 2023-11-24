@@ -8,14 +8,17 @@ import { Component } from '@angular/core';
 export class MercadoriasComponent {
   title = "Lista de Compras";
   mercadorias = [{
+    id:1,
   descricao : "arroz",
   quantidades : 1  
   },
 {
+  id:2,
   descricao : "feijão",
   quantidades : 4 
   },
   {
+    id:3,
   descricao : "Oléo",
   quantidades : 10  
   }
