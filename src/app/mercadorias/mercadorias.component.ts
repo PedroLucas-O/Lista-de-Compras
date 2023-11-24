@@ -7,10 +7,19 @@ import { Component } from '@angular/core';
 })
 export class MercadoriasComponent {
   title = "Lista de Compras";
-  mercadorias = {
+  mercadorias = [{
   descricao : "arroz",
-  quantidades : 1 
+  quantidades : 1  
+  },
+{
+  descricao : "feijão",
+  quantidades : 4 
+  },
+  {
+  descricao : "Oléo",
+  quantidades : 10  
   }
+  ]
 
 
 }

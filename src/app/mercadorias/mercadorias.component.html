@@ -6,8 +6,8 @@
 
 <div>
 	<ul>
-		<li>
-			{{mercadorias.descricao}}-{{mercadorias.quantidades}}
+		<li *ngFor="let mercadoria of mercadorias">
+			{{mercadoria.descricao}}-{{mercadoria.quantidades}}
 		</li>
 	</ul>
 </div>
