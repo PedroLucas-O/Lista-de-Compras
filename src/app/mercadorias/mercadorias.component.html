@@ -5,9 +5,27 @@
 </div>
 
 <div>
-	<ul>
-		<li *ngFor="let mercadoria of mercadorias">
-			{{mercadoria.descricao}}-{{mercadoria.quantidades}}
-		</li>
-	</ul>
+	<table>
+		<thead>
+		<tr>
+			<th>
+				nome mercadoria
+			</th>
+			<th>
+				quantidade
+			</th>
+		</tr>
+		</thead>
+		
+		<tbody>
+			<tr *ngFor="let mercadoria of mercadorias">
+				<td>
+					{{mercadoria.descricao}}
+				</td>
+				<td>
+					{{mercadoria.quantidades}}
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </div>
