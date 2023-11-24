@@ -1,13 +1,25 @@
+<div style="background-color:#ECF4D6;"  width="100%;" height="100%;">
+	
+
+
+<!-- Titulo -->
 <div style="text-align: center;">
 	<h1>
 		{{title}}
 	</h1>
 </div>
 
+<!-- Tabela -->
 <div>
 	<table class="center-hor layout-table" width="500px">
 		<thead>
-		<tr style="background-color: gray;">
+		<tr class="header-table-gray">
+			<th>
+			   índice
+			</th>
+			<th>
+				id
+			</th>
 			<th>
 				nome mercadoria
 			</th>
@@ -18,7 +30,13 @@
 		</thead>
 		
 		<tbody>
-			<tr class="text-center" *ngFor="let mercadoria of mercadorias">
+			<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index">
+				<td>
+					{{i}}
+				</td>
+				<td>
+		           {{mercadoria.id}}
+				</td>
 				<td>
 					{{mercadoria.descricao}}
 				</td>
@@ -28,4 +46,5 @@
 			</tr>
 		</tbody>
 	</table>
+</div>
 </div>
