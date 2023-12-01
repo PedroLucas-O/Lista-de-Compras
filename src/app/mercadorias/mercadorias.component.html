@@ -1,6 +1,4 @@
 <div style="background-color:#ECF4D6;"  width="100%;" height="100%;">
-	
-
 
 <!-- Titulo -->
 <div style="text-align: center;">
@@ -14,12 +12,11 @@
 	<table class="center-hor layout-table" width="500px">
 		<thead>
 		<tr class="header-table-gray">
-			<th>
-			   índice
-			</th>
+			
 			<th>
 				id
 			</th>
+
 			<th>
 				nome mercadoria
 			</th>
@@ -30,16 +27,16 @@
 		</thead>
 		
 		<tbody>
-			<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index">
-				<td>
-					{{i}}
-				</td>
+			<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar;"[ngClass]="{par:par,impar:impar}">
+				
 				<td>
 		           {{mercadoria.id}}
 				</td>
+
 				<td>
 					{{mercadoria.descricao}}
 				</td>
+
 				<td>
 					{{mercadoria.quantidades}}
 				</td>
