@@ -10,17 +10,20 @@ export class MercadoriasComponent {
   mercadorias = [{
     id:1,
   descricao : "arroz",
-  quantidades : 1  
+  quantidadeEstoque : 1,
+  quantidadeMinima : 2
   },
 {
   id:2,
   descricao : "feijão",
-  quantidades : 4 
+  quantidadeEstoque : 5,
+  quantidadeMinima : 3
   },
   {
     id:3,
   descricao : "Oléo",
-  quantidades : 10  
+  quantidadeEstoque : 2,
+  quantidadeMinima : 2
   }
   ]
 

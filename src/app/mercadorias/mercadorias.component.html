@@ -21,7 +21,11 @@
 				nome mercadoria
 			</th>
 			<th>
-				quantidade
+				quantidade em estoque
+			</th>
+
+			<th>
+				quantidade minima
 			</th>
 		</tr>
 		</thead>
@@ -38,8 +42,12 @@
 				</td>
 
 				<td>
-					{{mercadoria.quantidades}}
+					{{mercadoria.quantidadeEstoque}}
 				</td>
+				<td>
+		           {{mercadoria.quantidadeMinima}} <span> precisa comprar </span>
+				</td>
+
 			</tr>
 		</tbody>
 	</table>
