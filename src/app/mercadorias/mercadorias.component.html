@@ -27,6 +27,9 @@
 			<th>
 				quantidade minima
 			</th>
+			<th>
+				precisa comprar
+			</th>
 		</tr>
 		</thead>
 		
@@ -45,9 +48,11 @@
 					{{mercadoria.quantidadeEstoque}}
 				</td>
 				<td>
-		           {{mercadoria.quantidadeMinima}} <span> precisa comprar </span>
+		           {{mercadoria.quantidadeMinima}} <span *ngIf="mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima">  </span>
 				</td>
-
+                <td>
+		         <span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima"> não </span>
+				</td>
 			</tr>
 		</tbody>
 	</table>
