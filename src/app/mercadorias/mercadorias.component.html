@@ -1,4 +1,6 @@
-<div style="background-color:#ECF4D6;"  width="100%;" height="100%;">
+
+<div style="background-color: #f1e8f5;">
+	
 
 <!-- Titulo -->
 <div style="text-align: center;">
@@ -51,7 +53,9 @@
 		           {{mercadoria.quantidadeMinima}} <span *ngIf="mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima">  </span>
 				</td>
                 <td>
-		         <span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima"> não </span>
+		         <span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima;then naoPrecisaComprar; else precisaComprar"> não </span>
+		         <ng-template #precisaComprar> Sim </ng-template>
+		         <ng-template #naoPrecisaComprar> Não </ng-template>
 				</td>
 			</tr>
 		</tbody>
