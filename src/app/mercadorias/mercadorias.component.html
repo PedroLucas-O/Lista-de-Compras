@@ -36,7 +36,7 @@
 		</thead>
 		
 		<tbody>
-			<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar;"[ngClass]="{par:par,impar:impar}">
+			<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar;"[ngClass]="{par:par,impar:impar}"[ngSwitch]="true">
 				
 				<td>
 		           {{mercadoria.id}}
@@ -50,15 +50,17 @@
 					{{mercadoria.quantidadeEstoque}}
 				</td>
 				<td>
-		           {{mercadoria.quantidadeMinima}} <span *ngIf="mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima">  </span>
+		           {{mercadoria.quantidadeMinima}} 
 				</td>
+
                 <td>
-		         <span *ngIf="mercadoria.quantidadeEstoque >= mercadoria.quantidadeMinima;then naoPrecisaComprar; else precisaComprar"> não </span>
-		         <ng-template #precisaComprar> Sim </ng-template>
-		         <ng-template #naoPrecisaComprar> Não </ng-template>
+		       <span *ngSwitchCase="mercadoria.quantidadeEstoque > mercadoria.quantidadeMinima"> Não </span>
+		        <span *ngSwitchCase="mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima"> Sim </span>
+                <span *ngSwitchCase="mercadoria.quantidadeEstoque == mercadoria.quantidadeMinima"> Fique atento! jájá acaba </span>
 				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 </div>
+<!-- o comando mais ODIADO de TODOS "mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima" -->
