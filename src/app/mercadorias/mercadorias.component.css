@@ -23,3 +23,12 @@
 .impar{
  background-color: #e8e8e8;
 }
+
+.largura-input{
+	width: 19%;
+}
+
+.largura-container{
+	width: 801px;
+	margin-top: 19px;
+}

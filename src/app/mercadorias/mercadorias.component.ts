@@ -21,11 +21,23 @@ export class MercadoriasComponent {
   },
   {
     id:3,
-  descricao : "Oléo",
+  descricao : "oléo",
   quantidadeEstoque : 2,
+  quantidadeMinima : 2
+  },
+  {
+    id:4,
+  descricao : "leite",
+  quantidadeEstoque : 37 ,
   quantidadeMinima : 2
   }
   ]
+newMercadoria={
+   id:5,
+  descricao : "sal",
+  quantidadeEstoque : 2,
+  quantidadeMinima : 1
+}
 
-
+constructor(){}
 }

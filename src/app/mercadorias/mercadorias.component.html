@@ -62,5 +62,15 @@
 		</tbody>
 	</table>
 </div>
+<div class="largura-container center-hor">
+	ID:
+	<input type="text" name="id" class="largura-input" [ngModel]="newMercadoria.id">
+	DESCRIÇÃO:
+	<input type="text" name="descricao" class="largura-input" [ngModel]="newMercadoria.descricao">
+	QUANTIDADE EM ESTOQUE:
+	<input type="text" name="quantidadeEstoque" class="largura-input" [ngModel]="newMercadoria.quantidadeEstoque">
+	QUANTIDADE MINIMA:
+	<input type="text" name="quantidadeMinima" class="largura-input" [ngModel]="newMercadoria.quantidadeMinima">
+</div>
 </div>
 <!-- o comando mais ODIADO de TODOS "mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima" -->
