@@ -4,14 +4,32 @@
 
 }
 
-.layout-table,
-.layout-table th,
-.layout-table td{
-	border-style: solid;
-	border-color: #000;
+
+
+	
+	/*border-width: 5px;
+	border-color: darkblue;*/
+	
+
+
+.layout-table th{
+	border-style: groove;
 	border-width: 5px;
+	border-color: #2D1300;
+}
+
+.layout-table{
+	background-color: #3c1900 ;
+	font-family: Rubik Scribble;
+}
+
+.layout-table td{
+	border-style: groove;
+ 	border-width: 5px;
+	border-color: #2D1300;
 
 }
+
 .text-center{
 	text-align: center;
 }
@@ -25,10 +43,17 @@
 }
 
 .largura-input{
-	width: 19%;
+	width: 50%;
+
 }
 
+
 .largura-container{
-	width: 801px;
-	margin-top: 19px;
-}
+	width: 500px;
+	display: grid; 
+    margin-top: 1%;
+    margin-right: 11%;
+
+  
+
+}    

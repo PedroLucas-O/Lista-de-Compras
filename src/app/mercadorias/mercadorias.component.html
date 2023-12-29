@@ -64,13 +64,19 @@
 </div>
 <div class="largura-container center-hor">
 	ID:
-	<input type="text" name="id" class="largura-input" [ngModel]="newMercadoria.id">
+	<input type="text" name="id" class="largura-input" [(ngModel)]="newMercadoria.id">
 	DESCRIÇÃO:
-	<input type="text" name="descricao" class="largura-input" [ngModel]="newMercadoria.descricao">
+	<input type="text" name="descricao" class="largura-input" [(ngModel)]="newMercadoria.descricao">
 	QUANTIDADE EM ESTOQUE:
-	<input type="text" name="quantidadeEstoque" class="largura-input" [ngModel]="newMercadoria.quantidadeEstoque">
+	<input type="text" name="quantidadeEstoque" class="largura-input" [(ngModel)]="newMercadoria.quantidadeEstoque">
 	QUANTIDADE MINIMA:
-	<input type="text" name="quantidadeMinima" class="largura-input" [ngModel]="newMercadoria.quantidadeMinima">
+	<input type="text" name="quantidadeMinima" class="largura-input" [(ngModel)]="newMercadoria.quantidadeMinima">
+ 	<button style="width: 257px ; margin-top: 10px;" (click)="adicionarMercadoria()">
+ 		adicionar mercadoria
+ 	</button>
+
+
+
 </div>
 </div>
 <!-- o comando mais ODIADO de TODOS "mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima" -->

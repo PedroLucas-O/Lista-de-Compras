@@ -38,6 +38,15 @@ newMercadoria={
   quantidadeEstoque : 2,
   quantidadeMinima : 1
 }
+adicionarMercadoria(){
+  this.mercadorias.push({
+    id:this.newMercadoria.id,
+    descricao:this.newMercadoria.descricao,
+    quantidadeEstoque:this.newMercadoria.quantidadeEstoque,
+    quantidadeMinima:this.newMercadoria.quantidadeMinima
+  })
 
+
+}
 constructor(){}
 }
