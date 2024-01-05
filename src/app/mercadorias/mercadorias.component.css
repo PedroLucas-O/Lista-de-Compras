@@ -2,31 +2,31 @@
 	margin-right: auto;
 	margin-left: auto;
 
-}
-
-
-
-	
-	/*border-width: 5px;
-	border-color: darkblue;*/
-	
+}	
 
 
 .layout-table th{
 	border-style: groove;
 	border-width: 5px;
-	border-color: #2D1300;
+	border-color:#572b0c;
+	background-color:hwb(20 16% 72%);
+	color: #000;
 }
-
+	
 .layout-table{
 	background-color: #3c1900 ;
 	font-family: Rubik Scribble;
+	
+	
+	
 }
+
 
 .layout-table td{
 	border-style: groove;
  	border-width: 5px;
 	border-color: #2D1300;
+	color: #000;
 
 }
 
@@ -34,12 +34,13 @@
 	text-align: center;
 }
 
-.par{
- background-color: #bdbdbd;
+.impar{
+ background-color: #40E0D0;	
+ 
 }
 
-.impar{
- background-color: #e8e8e8;
+.par{
+  background-color: #7fffd4; 
 }
 
 .largura-input{

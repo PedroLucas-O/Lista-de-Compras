@@ -33,10 +33,10 @@ export class MercadoriasComponent {
   }
   ]
 newMercadoria={
-   id:5,
+   id:0o5,
   descricao : "sal",
-  quantidadeEstoque : 2,
-  quantidadeMinima : 1
+  quantidadeEstoque : 0o2,
+  quantidadeMinima : 0o1
 }
 adicionarMercadoria(){
   this.mercadorias.push({

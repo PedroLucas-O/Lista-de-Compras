@@ -1,82 +1,105 @@
-
 <div style="background-color: #f1e8f5;">
 	
 
-<!-- Titulo -->
-<div style="text-align: center;">
-	<h1>
-		{{title}}
-	</h1>
-</div>
-
-<!-- Tabela -->
-<div>
-	<table class="center-hor layout-table" width="500px">
-		<thead>
-		<tr class="header-table-gray">
-			
-			<th>
-				id
-			</th>
-
-			<th>
-				nome mercadoria
-			</th>
-			<th>
-				quantidade em estoque
-			</th>
-
-			<th>
-				quantidade minima
-			</th>
-			<th>
-				precisa comprar
-			</th>
-		</tr>
-		</thead>
+	<!-- Titulo -->
+	<div style="text-align: center;">
+		<h1>
+			{{title}}
+		</h1>
+	</div>
+	
+	<!-- Tabela -->
+	<div>
 		
-		<tbody>
-			<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar;"[ngClass]="{par:par,impar:impar}"[ngSwitch]="true">
+		<table class="center-hor layout-table" width="500px">
+			<thead>
+			<tr class="header-table-gray">
 				
-				<td>
-		           {{mercadoria.id}}
-				</td>
-
-				<td>
-					{{mercadoria.descricao}}
-				</td>
-
-				<td>
-					{{mercadoria.quantidadeEstoque}}
-				</td>
-				<td>
-		           {{mercadoria.quantidadeMinima}} 
-				</td>
-
-                <td>
-		       <span *ngSwitchCase="mercadoria.quantidadeEstoque > mercadoria.quantidadeMinima"> Não </span>
-		        <span *ngSwitchCase="mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima"> Sim </span>
-                <span *ngSwitchCase="mercadoria.quantidadeEstoque == mercadoria.quantidadeMinima"> Fique atento! jájá acaba </span>
-				</td>
+				<th>
+					id
+				</th>
+	
+				<th>
+					nome mercadoria
+				</th>
+				<th>
+					quantidade em estoque
+				</th>
+	
+				<th>
+					quantidade minima
+				</th>
+				<th>
+					precisa comprar
+				</th>
+				
 			</tr>
-		</tbody>
-	</table>
-</div>
-<div class="largura-container center-hor">
-	ID:
-	<input type="text" name="id" class="largura-input" [(ngModel)]="newMercadoria.id">
-	DESCRIÇÃO:
-	<input type="text" name="descricao" class="largura-input" [(ngModel)]="newMercadoria.descricao">
-	QUANTIDADE EM ESTOQUE:
-	<input type="text" name="quantidadeEstoque" class="largura-input" [(ngModel)]="newMercadoria.quantidadeEstoque">
-	QUANTIDADE MINIMA:
-	<input type="text" name="quantidadeMinima" class="largura-input" [(ngModel)]="newMercadoria.quantidadeMinima">
- 	<button style="width: 257px ; margin-top: 10px;" (click)="adicionarMercadoria()">
- 		adicionar mercadoria
- 	</button>
+			</thead>
+			
+			<tbody>
+				<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar;"[ngClass]="{par:par,impar:impar}"[ngSwitch]="true">
+					
+					<td>
+					   {{mercadoria.id}}
+					</td>
+	
+					<td>
+						{{mercadoria.descricao}}
+					</td>
+	
+					<td>
+						{{mercadoria.quantidadeEstoque}}
+					</td>
+					<td>
+					   {{mercadoria.quantidadeMinima}} 
+					</td>
+	
+					<td>
+				   <span *ngSwitchCase="mercadoria.quantidadeEstoque > mercadoria.quantidadeMinima"> Não </span>
+					<span *ngSwitchCase="mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima"> Sim </span>
+					<span *ngSwitchCase="mercadoria.quantidadeEstoque == mercadoria.quantidadeMinima"> Fique atento! jájá acaba </span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="largura-container center-hor">
+		ID:
+		<input type="text" name="id" class="largura-input" [(ngModel)]="newMercadoria.id" required minlength="2" #validId="ngModel">
+	    <div *ngIf="!validId.valid">
+			<span *ngIf="validId.hasError('required')">campo obrigatorio</span>
+			<span *ngIf="validId.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
+		</div>
 
+		DESCRIÇÃO:
+		<input type="text" name="descricao" class="largura-input" [(ngModel)]="newMercadoria.descricao" required minlength="2" #validDescricao="ngModel">
+		<div *ngIf="!validDescricao.valid">
+			<span *ngIf="validDescricao.hasError('required')">campo obrigatorio</span>
+			<span *ngIf="validDescricao.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
+		</div>
 
+		QUANTIDADE EM ESTOQUE:
+		<input type="text" name="quantidadeEstoque" class="largura-input" [(ngModel)]="newMercadoria.quantidadeEstoque" required minlength="2" #validQuantidadeEstoque="ngModel">
+		<div *ngIf="!validQuantidadeEstoque.valid">
+			<span *ngIf="validQuantidadeEstoque.hasError('required')">campo obrigatorio</span>
+			<span *ngIf="validQuantidadeEstoque.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
+		</div>
 
-</div>
-</div>
-<!-- o comando mais ODIADO de TODOS "mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima" -->
+		QUANTIDADE MINIMA:
+		<input type="text" name="quantidadeMinima" class="largura-input" [(ngModel)]="newMercadoria.quantidadeMinima" required minlength="2" #validQuantidadeMinima="ngModel">
+		<div *ngIf="!validQuantidadeMinima.valid">
+			<span *ngIf="validQuantidadeMinima.hasError('required')">campo obrigatorio</span>
+			<span *ngIf="validQuantidadeMinima.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
+		</div>
+
+		 <button style="width: 257px ; margin-top: 10px;" [disabled]="!validId.valid || !validDescricao.valid || !validQuantidadeEstoque.valid || !validQuantidadeMinima.valid" (click)="adicionarMercadoria()"
+		 
+		 >
+			 adicionar mercadoria
+		 </button>
+	
+	
+	
+	</div>
+	</div>
+	<!-- o comando mais ODIADO de TODOS "mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima" -->
