@@ -36,7 +36,7 @@
 			</tr>
 			</thead>
 			
-			<tbody>
+			 <tbody>
 				<tr class="text-center" *ngFor="let mercadoria of mercadorias; let i=index; let par=even; odd as impar;"[ngClass]="{par:par,impar:impar}"[ngSwitch]="true">
 					
 					<td>
@@ -63,43 +63,6 @@
 			</tbody>
 		</table>
 	</div>
-	<div class="largura-container center-hor">
-		ID:
-		<input type="text" name="id" class="largura-input" [(ngModel)]="newMercadoria.id" required minlength="2" #validId="ngModel">
-	    <div *ngIf="!validId.valid">
-			<span *ngIf="validId.hasError('required')">campo obrigatorio</span>
-			<span *ngIf="validId.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
-		</div>
-
-		DESCRIÇÃO:
-		<input type="text" name="descricao" class="largura-input" [(ngModel)]="newMercadoria.descricao" required minlength="2" #validDescricao="ngModel">
-		<div *ngIf="!validDescricao.valid">
-			<span *ngIf="validDescricao.hasError('required')">campo obrigatorio</span>
-			<span *ngIf="validDescricao.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
-		</div>
-
-		QUANTIDADE EM ESTOQUE:
-		<input type="text" name="quantidadeEstoque" class="largura-input" [(ngModel)]="newMercadoria.quantidadeEstoque" required minlength="2" #validQuantidadeEstoque="ngModel">
-		<div *ngIf="!validQuantidadeEstoque.valid">
-			<span *ngIf="validQuantidadeEstoque.hasError('required')">campo obrigatorio</span>
-			<span *ngIf="validQuantidadeEstoque.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
-		</div>
-
-		QUANTIDADE MINIMA:
-		<input type="text" name="quantidadeMinima" class="largura-input" [(ngModel)]="newMercadoria.quantidadeMinima" required minlength="2" #validQuantidadeMinima="ngModel">
-		<div *ngIf="!validQuantidadeMinima.valid">
-			<span *ngIf="validQuantidadeMinima.hasError('required')">campo obrigatorio</span>
-			<span *ngIf="validQuantidadeMinima.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
-		</div>
-
-		 <button style="width: 257px ; margin-top: 10px;" [disabled]="!validId.valid || !validDescricao.valid || !validQuantidadeEstoque.valid || !validQuantidadeMinima.valid" (click)="adicionarMercadoria()"
-		 
-		 >
-			 adicionar mercadoria
-		 </button>
-	
-	
-	
-	</div>
-	</div>
+	  
+	</div>   
 	<!-- o comando mais ODIADO de TODOS "mercadoria.quantidadeEstoque < mercadoria.quantidadeMinima" -->
