@@ -10,7 +10,7 @@ const routes:Routes=[
   {path:'pagina1',component:Pagina1Component},
   {path:'pagina2',component:Pagina2Component},
   {path:'mercadorias',component:MercadoriasComponent},
-  {path:'mercadorias/edit',component:EditmercadoriaComponent}
+  {path:'mercadorias/edit/:id',component:EditmercadoriaComponent}
 ]
 
 @NgModule({

@@ -27,10 +27,11 @@
         <span *ngIf="validQuantidadeMinima.hasError('minlength')">É necessario no minimo 2 (dois) caracteres </span>
     </div>
 
-     <button style="width: 257px ; margin-top: 10px;" [disabled]="!validId.valid || !validDescricao.valid || !validQuantidadeEstoque.valid || !validQuantidadeMinima.valid" (click)="adicionarMercadoria()"
+
+     <button style="width: 257px ; margin-top: 10px;" [disabled]="!validId.valid || !validDescricao.valid || !validQuantidadeEstoque.valid || !validQuantidadeMinima.valid" (click)="salvarMercadorias()"
      
      >
-         adicionar mercadoria
+        salvar alterações
      </button> 
 
 

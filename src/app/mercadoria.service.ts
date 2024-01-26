@@ -9,7 +9,7 @@ export class MercadoriaService {
 
   constructor() { }
 
-  getMercadorias():Mercadoria[]{
-    return LISTAMERCADORIAS
+  getMercadorias(id:null | any ):Mercadoria{
+    return LISTAMERCADORIAS[id]
   }
 }
